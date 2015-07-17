@@ -1,0 +1,34 @@
+<!-- 公式SNSボタンを使うために必要なJS -->
+<!-- #include file="/include/header/snsJs.html" -->
+
+<header class="headWrapper">
+	<div class="acms-container">
+		<div class="header" role="banner">
+			<!-- BEGIN_MODULE Blog_Field -->
+			<div class="headerLogo">
+
+				<!-- BEGIN_IF [%{BID}/eq/1/and/%{VIEW}/eq/top] --><h1 class="siteName"><!-- ELSE --><p class="siteName"><!-- END_IF --><a href="%{BASE_URL}">
+					<!-- BEGIN siteLogo:veil --><img src="%{ARCHIVES_DIR}{siteLogo@path}" alt="%{BLOG_NAME}" class="siteLogo"><!-- END siteLogo:veil --><!-- BEGIN siteName:veil --><span class="siteNameText">{siteName}</span><!-- END siteName:veil --></a>
+				<!-- BEGIN_MODULE Touch_SessionWithCompilation --><span class="editLink">[<a href="%{SCRIPT_ROOT}bid/%{BID}/admin/blog_edit/#acms_custom">編集</a>]</span><!-- END_MODULE Touch_SessionWithCompilation -->
+				<!-- BEGIN_IF [%{BID}/eq/1/and/%{VIEW}/eq/top] --></h1><!-- ELSE --></p><!-- END_IF -->
+
+				<div class="acms-hide-pc">
+					<nav class="siteHeader">
+						<a class="navMenuBtn" id="nav-open-btn" href="#nav" tabindex="-1"><i class="acms-icon-sort"></i><span class="navMenuBtnText">メニュー</span></a>
+						<ul class="navMenuAction">
+							<li class="navMenuActionItem"><a href="%{BLOG_URL}contact/" title="メールする" class="navMenuActionLink headAccess"><i class="acms-icon-config_mail"></i></a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<!-- END_MODULE Blog_Field -->
+			<div class="headerNav">
+				<div class="acms-grid-r">
+					<!-- グローバルナビ -->
+					<!--#include file="/include/header/dynamicGlobalNavi.html" -->
+				</div>
+				<a href="#" class="offCanvasShadow"></a>
+			</div>
+		</div>
+	</div>
+</header>
