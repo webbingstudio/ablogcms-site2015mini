@@ -1,0 +1,35 @@
+@charset "utf-8";
+/*!
+ * site2015 extend styles
+ * ---------------------------------------------
+ * 
+ */
+
+/* 大きなロゴに対応 */
+
+.siteLogo {
+  width: 100%;
+  max-width: 200px;
+}
+
+@media (min-width: 768px) {
+  .siteLogo {
+    max-width: 300px;
+  }
+}
+
+/* カテゴリー背景の指定がないときに出る画像を無効化 */
+
+.pageTitleWrapper {
+  background-color: #999999;
+  background-image: none;
+}
+
+/* 高解像度のときのカテゴリータイトル高さを詰める */
+
+@media (min-width: 768px) {
+  .pageTitleWrapper {
+    height: auto;
+  }
+}
+
