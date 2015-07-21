@@ -1,0 +1,123 @@
+<!-- BEGIN_MODULE Form -->
+
+<!-- BEGIN step -->
+<!-- フォームステップ：初期 -->
+<div class="acms-entry contactBox">
+	<section class="entryColumn">
+		<div class="acms-grid-r">
+
+			<!-- BEGIN_MODULE Category_Field --><p>{contactSupplementary}[nl2br]<!-- BEGIN_MODULE Touch_SessionWithCompilation --><span class="editLink">[<a href="%{SCRIPT_ROOT}bid/%{BID}/cid/%{CID}/admin/category_edit/#acms_custom">テキストを編集</a>]</span><!-- END_MODULE Touch_SessionWithCompilation --></p><!-- END_MODULE Category_Field -->
+
+			<!-- フォームステップ -->
+			<!--#include file="/contact/form/step.html" -->
+
+			<form action="" method="post" class="acms-form" enctype="multipart/form-data">
+				<!--#include file="/contact/form/input.html"-->
+				<div class="formBtnBox clearfix">
+					<input type="hidden" name="step" value="confirm" />
+					<input type="hidden" name="error" value="reapply" />
+
+					<input type="hidden" name="id" value="contactForm" />
+					<input type="submit" name="ACMS_POST_Form_Confirm" value="送信内容の確認へ" id="btnConfirm" class="btnAttentionBlockLarge" />
+					<hr class="clearHidden" />
+				</div>
+			</form>
+		</div>
+	</section>
+</div>
+<!-- END step -->
+
+<!-- BEGIN step#reapply -->
+<!-- フォームステップ：修正・エラー -->
+<div class="acms-entry contactBox">
+	<section class="entryColumn">
+		<div class="acms-grid-r">
+			<h2>送信内容のご確認</h2>
+			<!-- フォームステップ -->
+			<!--#include file="/contact/form/step.html" -->
+			<p class="message">入力内容を、もう一度ご確認ください。</p>
+
+			<form action="" method="post" class="acms-form" enctype="multipart/form-data">
+				<!--#include file="/contact/form/input.html"-->
+				<div class="formBtnBox clearfix">
+					<input type="hidden" name="step" value="confirm" />
+					<input type="hidden" name="error" value="reapply" />
+
+					<input type="hidden" name="id" value="contactForm" />
+					<input type="submit" name="ACMS_POST_Form_Confirm" value="送信内容の確認へ" id="btnConfirm" class="btnAttentionBlockLarge" />
+					<hr class="clearHidden" />
+				</div>
+			</form>
+		</div>
+	</section>
+</div>
+<!-- END step#reapply -->
+
+<!-- BEGIN step#confirm -->
+<!-- フォームステップ：確認画面 -->
+<div class="acms-entry contactBox">
+	<section class="entryColumn">
+		<div class="acms-grid-r">
+			<h2>送信内容のご確認</h2>
+			<!-- フォームステップ -->
+			<!--#include file="/contact/form/step.html" -->
+			<p class="message">下記の内容で送信いたします。<br>入力内容をご確認のうえ、「送信する」ボタンを押してください。</p>
+			<!--#include file="/contact/form/confirm.html"-->
+			<div class="formBtnBox clearfix">
+				<form action="" method="post" class="formBtn formBtnReturn">
+					<input type="hidden" name="step" value="reapply" />
+					<input type="hidden" name="takeover" value="{takeover}" />
+					<input type="submit" name="ACMS_POST_Form_Chain" value="戻る" id="btnToInput" class="btnLarge" />
+				</form>
+				
+				<form action="thanks.html" method="post" class="formBtn formBtnSend" enctype="multipart/form-data">
+					<input type="hidden" name="To[]" value="{email}" />
+					<input type="hidden" name="AdminReply-To[]" value="<{email}>" />
+					<input type="hidden" name="AdminFrom[]" value="<{email}>" />
+					<input type="hidden" name="step" value="result" />
+					<input type="hidden" name="takeover" value="{takeover}" />
+					<input type="hidden" name="id" value="contactForm" />
+					<input type="submit" name="ACMS_POST_Form_Submit" value="送信する" id="btnSubmit" class="btnAttentionBlockLarge" />
+				</form>
+			</div>
+		</div>
+	</section>
+</div>
+<!-- END step#confirm -->
+
+<!-- BEGIN step#result -->
+<!-- フォームステップ：完了画面 -->
+<div class="acms-entry contactBox">
+	<section class="entryColumn">
+		<div class="acms-grid-r">
+			<h2>送信完了</h2>
+			<p class="message">お問い合わせありがとうございました。以下の内容で送信しました。</p>
+			<!--#include file="/contact/form/confirm.html"-->
+		</div>
+	</section>
+</div>
+<!-- END step#result -->
+
+<!-- BEGIN step#forbidden -->
+<div class="acms-entry contactBox">
+	<section class="entryColumn">
+		<h2>不正なアクセスです</h2>
+		<p class="message">お手数ですが、はじめからやり直してください。</p>
+	</section>
+</div>
+<!-- END step#forbidden -->
+
+<!-- BEGIN step#repeated -->
+<div class="acms-entry contactBox">
+	<section class="entryColumn">
+		<h2>連続送信は禁止されています</h2>
+		<p class="message">お手数ですが、はじめからやり直してください。</p>
+	</section>
+</div>
+<!-- END step#repeated -->
+
+<!-- BEGIN error -->
+	<!-- フォームID : {formID} / エラー項目 : {errorKey} -->
+<!-- END error -->
+
+<!-- END_MODULE Form -->
