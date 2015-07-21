@@ -37,3 +37,29 @@
   }
 }
 
+/* フッタSNSボタン・コピーライトの調整 */
+
+.footWrapper {
+  padding: 15px 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .footWrapper {
+    padding: 15px 0 60px;
+  }
+}
+
+.copyright {
+  margin: 0;
+  padding: 15px 0 0;
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+@media screen and (min-width: 768px) {
+  .copyright {
+    font-size: 14px;
+  }
+}
+
+
