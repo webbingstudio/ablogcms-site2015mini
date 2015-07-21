@@ -7,8 +7,20 @@
 			<!-- BEGIN_MODULE Blog_Field -->
 			<div class="headerLogo">
 
-				<!-- BEGIN_IF [%{BID}/eq/1/and/%{VIEW}/eq/top] --><h1 class="siteName"><!-- ELSE --><p class="siteName"><!-- END_IF --><a href="%{BASE_URL}">
-					<!-- BEGIN siteLogo:veil --><img src="%{ARCHIVES_DIR}{siteLogo@path}" alt="%{BLOG_NAME}" class="siteLogo"><!-- END siteLogo:veil --><!-- BEGIN siteName:veil --><span class="siteNameText">{siteName}</span><!-- END siteName:veil --></a>
+				<!-- BEGIN_IF [%{BID}/eq/1/and/%{VIEW}/eq/top] --><h1 class="siteName"><!-- ELSE --><p class="siteName"><!-- END_IF -->
+					<a href="%{BASE_URL}">
+					<!-- BEGIN_IF [{siteLogo@path}/nem] -->
+						<!-- BEGIN_IF [{siteName}/nem] -->
+						<img src="%{ARCHIVES_DIR}{siteLogo@path}" alt="{siteName}" class="siteLogo">
+						<!-- ELSE -->
+						<img src="%{ARCHIVES_DIR}{siteLogo@path}" alt="%{BLOG_NAME}" class="siteLogo">
+						<!-- END_IF -->
+					<!-- ELSE_IF [{siteName}/nem] -->
+						<span class="siteNameText">{siteName}</span>
+					<!-- ELSE -->
+						<span class="siteNameText">%{BLOG_NAME}</span>
+					<!-- END_IF -->
+					</a>
 				<!-- BEGIN_MODULE Touch_SessionWithCompilation --><span class="editLink">[<a href="%{SCRIPT_ROOT}bid/%{BID}/admin/blog_edit/#acms_custom">編集</a>]</span><!-- END_MODULE Touch_SessionWithCompilation -->
 				<!-- BEGIN_IF [%{BID}/eq/1/and/%{VIEW}/eq/top] --></h1><!-- ELSE --></p><!-- END_IF -->
 

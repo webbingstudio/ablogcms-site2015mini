@@ -8,7 +8,7 @@
 /* 大きなロゴに対応 */
 
 .siteLogo {
-  width: 100%;
+  width: auto;
   max-width: 200px;
 }
 
@@ -26,6 +26,10 @@
 }
 
 /* 高解像度のときのカテゴリータイトル高さを詰める */
+
+.pageTitleInner {
+  padding: 20px 10px 10px;
+}
 
 @media (min-width: 768px) {
   .pageTitleWrapper {
