@@ -1,0 +1,17 @@
+<script>
+ACMS.Ready(function() {
+	new ACMS.SyncLoader()
+		.next('%{HTTP_THEMES_DIR}site2015/js/slick/slick.js')
+		.load(function(){
+			$('.js-main-slider').slick({
+				dots: true,
+				arrows: true,
+				prevArrow: '<button type="button" class="slick-prev">前へ</button>',
+				nextArrow: '<button type="button" class="slick-next">次へ</button>',
+				autoplay: true,
+				autoplaySpeed: 5000,
+				speed: 1500,
+			});
+		});
+});
+</script>
