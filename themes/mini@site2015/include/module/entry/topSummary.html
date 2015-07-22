@@ -1,0 +1,34 @@
+<!-- BEGIN_MODULE Entry_Summary id="topSummary" -->
+<section class="moduleSection">
+
+	<!--#include file="/admin/module/setting.html"-->
+	<div class="moduleHeader clearfix">
+	<!-- BEGIN moduleField -->
+	<!-- BEGIN_IF [{module_heading}/nem] -->
+		<h2 class="moduleHeading">{module_heading}</h2><!-- END_IF --><!-- END moduleField --><a href="{indexUrl}" class="moduleIndexLink"><span class="acms-icon acms-icon-arrow-right"></span>一覧</a>
+	</div>
+
+	<!-- BEGIN notFound -->
+	<p>記事が見つかりませんでした。</p>
+	<!-- END notFound -->
+
+	<ul class="summaryDefault">
+		<!-- BEGIN unit:loop -->
+		<!-- BEGIN entry:loop -->
+		<li class="summaryDefaultEntry js-autoheight-r js-biggerlink">
+			<div class="acms-summary">
+				<div class="summaryDefaultEntryImageWrap acms-summary-image">
+					<div style="width:100px; height:100px; overflow:hidden; position:relative; background-size: cover; background-position: 50% 50%;<!-- BEGIN image:veil --> background-image: url('%{ROOT_DIR}{path}');<!-- END image:veil --><!-- BEGIN noimage --> background-image: url('%{CURRENT_THEMES_DIR}images/noImage.png');<!-- END noimage -->"></div>
+				</div>
+				<div class="acms-summary-body">
+					<p class="summaryTitle acms-summary-heading"><a href="{url}">{title}</a></p>
+					<p class="summaryDetail">{summary}[trim(80, '...')]</p>
+				</div>
+			</div>
+		</li>
+		<!-- END entry:loop -->
+		<hr class="clearHidden" />
+		<!-- END unit:loop -->
+	</ul>
+</section>
+<!-- END_MODULE Entry_Summary -->
