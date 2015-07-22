@@ -1,6 +1,6 @@
 # ablogcms-site2015mini
 
-version 1.0.0  
+version 1.0.1  
 [http://webbingstudio.com/](http://webbingstudio.com/)
 
 ## はじめに
