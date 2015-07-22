@@ -25,6 +25,7 @@
   background-image: none;
 }
 
+
 /* 高解像度のときのカテゴリータイトル高さを詰める */
 
 .pageTitleInner {
@@ -35,6 +36,12 @@
   .pageTitleWrapper {
     height: auto;
   }
+}
+
+/* お問い合わせフォームのタイトル上が空く不具合を回避 */
+
+.page-header {
+  margin: 0 0 20px 0;
 }
 
 /* フッタSNSボタン・コピーライトの調整 */
