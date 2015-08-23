@@ -123,5 +123,5 @@ a-blog cms本体のライセンスは、独自となっています。販売元�
 1. 後述の通り、メンテナンスモードから「site2015mini」をインポートする
 1. モジュールID「summaryDefault」を複製し、IDを「summaryIndex」に変更する
 1. 「summaryIndex」モジュールに先ほど取得したyamlファイルをインポートする
-1. モジュールID「summaryDefault」の設定画面に再度移動し、「表示設定→ページャー→現在のページの要素の属性」の「class="cur"」の前に半角スペースを入力する（インポート時の不具合対応）
+1. インポート後の設定画面に再度移動し、「表示設定→ページャー→現在のページの要素の属性」の「class="cur"」の前に半角スペースを入力する（インポート時の不具合対応）
 1. /themes/mini@site2015/include/module/entry/summaryImageMain.html ファイルを削除またはリネームする（site2015のテンプレートが有効になります）
